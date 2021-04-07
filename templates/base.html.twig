@@ -1,62 +1,44 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="no-js" lang="en">
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Tech tek{% endblock %}</title>
-        <!-- CSS only -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-
+        <title>Mediathèque</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="author" content="ThemeZaa">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+        <meta name="description" content="Litho is a clean and modern design, BootStrap 4 responsive, business and portfolio multipurpose HTML5 template with 36+ ready homepage demos.">
+        <!-- favicon icon -->
+        <link rel="shortcut icon" href="images/favicon.png">
+        <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+        <!-- style sheets and font icons  -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('theme/assets/css/font-icons.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('theme/assets/css/theme-vendors.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('theme/assets/css/style.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('theme/assets/css/responsive.css') }}" />
         {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
+
         {% endblock %}
     </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-image: url('https://c.pxhere.com/photos/39/f8/library_sky_birds_mystical_clouds_sun_fantastic_mood-942473.jpg!d') ;">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{{ path('home') }}">Tech tek</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarColor01">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="">Clic</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">Ou pas</a>
-                        </li>
-                        {% if not app.user %}
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                Connexion
-                            </a>
-                        </li>
-                        {% else %}
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                Déconnexion
-                            </a>
-                        </li>
-                        {% endif %}
-                    </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="..." aria-label="Search">
-                        <button class="btn btn-secondary" type="submit">Recherche</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
-        <div class="container">
-            {% block body %}{% endblock %}
-        </div>
-        <footer class="footer mt-auto py-3 bg-dark fixed-bottom">
-            <div class="container">
-              <span class="text-muted">Aujourd'hui : </span>
-              <span class="text-muted"> {{'now'|date('d/m/Y H:i', "Europe/Paris")}} </span>
-            </div>
-          </footer>
+    <body data-mobile-nav-style="classic">
+    <!-- start header -->
+    <header class="header-with-topbar">
+        {% include 'layout/_topbar.html.twig' %}
+        {% include 'layout/_navbar.html.twig' %}
+    </header>
+    <!-- end header -->
+
+    {% block body %}
+    {% endblock %}
+
+    {% include 'layout/_footer.html.twig' %}
+    <!-- start scroll to top -->
+    <a class="scroll-top-arrow" href="javascript:void(0);"><i class="feather icon-feather-arrow-up"></i></a>
+    <!-- end scroll to top -->
+    <!-- javascript -->
+    <script type="text/javascript" src="{{ asset('theme/assets/js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('theme/assets/js/theme-vendors.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('theme/assets/js/main.js') }}"></script>
     </body>
-    {% block javascripts %}
-        <!-- JavaScript Bundle with Popper -->
-        {% endblock %}
 </html>
