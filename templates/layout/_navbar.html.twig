@@ -1,13 +1,6 @@
 <!-- start navigation -->
 <nav class="navbar top-space navbar-expand-lg navbar-light bg-white header-light fixed-top header-reverse-scroll navbar-boxed">
     <div class="container-fluid nav-header-container">
-        <div class="col-5 col-lg-2 mr-auto pl-md-0">
-            <a class="navbar-brand" href="index.html">
-                <img src="images/logo-fast-blue-black.png" data-at2x="images/logo-fast-blue-black@2x.png" class="default-logo" alt="">
-                <img src="images/logo-fast-blue-black.png" data-at2x="images/logo-fast-blue-black@2x.png" alt="" class="alt-logo">
-                <img src="images/logo-fast-blue-black.png" data-at2x="images/logo-fast-blue-black@2x.png" class="mobile-logo" alt="">
-            </a>
-        </div>
         <div class="col-auto menu-order">
             <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
                 <span class="navbar-toggler-line"></span>
@@ -18,7 +11,10 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav alt-font">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Qui sommes nous ?</a>
+                        <a href="{{ path('home') }}" class="nav-link">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ path('presentation') }}" class="nav-link">Qui sommes nous ?</a>
                     </li>
                     <li class="nav-item dropdown simple-dropdown">
                         <a href="#" class="nav-link">Nos médias</a>
