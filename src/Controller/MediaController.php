@@ -13,20 +13,18 @@ use Symfony\Component\Routing\Annotation\Route;
 class MediaController extends AbstractController
 {
     /**
-     * @Route("/", name="medias")
+     * @Route("/", name="books")
      */
-    public function mediaList()
+    public function bookList()
     {
-        return $this->render('media/index.html.twig');
+        return $this->render('media/book_list.html.twig');
     }
 
     /**
-     * @Route("/show", name="show_media")
+     * @Route("/show", name="show_book")
      */
-    public function mediaShow(): Response
+    public function bookShow()
     {
-        return $this->render('media/show.html.twig', [
-            'controller_name' => 'MediaController',
-        ]);
+        return $this->render('media/book_show.html.twig');
     }
 }

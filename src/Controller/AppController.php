@@ -25,12 +25,4 @@ class AppController extends AbstractController
         return $this->render('app/presentation.html.twig');
     }
 
-    /**
-     * @Route("/show/media", name="show_media")
-     */
-    public function showMedia(): Response
-    {
-        return $this->render('show_media/home.html.twig');
-    }
-
 }
