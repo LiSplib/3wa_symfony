@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Media Title{% endblock %}
+
+{% block body %}
+    <section class="big-section bg-light-gray wow animate__fadeIn">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12 text-center margin-six-bottom">
+                    <h6 class="alt-font text-extra-dark-gray font-weight-500">Nos médias</h6>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 justify-content-center">
+                <div class="col md-margin-30px-bottom xs-margin-15px-bottom wow animate__fadeInUp" data-wow-delay="0.2s">
+                    <div class="feature-box feature-box-left-icon-middle padding-3-rem-tb padding-3-half-rem-lr bg-white border-radius-8px box-shadow-large box-shadow-extra-large-hover last-paragraph-no-margin lg-padding-3-rem-lr">
+                        <div class="feature-box-icon margin-20px-right">
+                            <img class="rounded-circle w-60px h-60px" src="https://placehold.it/125x125" alt=""/>
+                        </div>
+                        <div class="feature-box-content line-height-22px">
+                            <div class="margin-5px-bottom">
+                                <i class="fas fa-star text-golden-yellow text-extra-small"></i>
+                                <i class="fas fa-star text-golden-yellow text-extra-small"></i>
+                                <i class="fas fa-star text-golden-yellow text-extra-small"></i>
+                                <i class="fas fa-star text-golden-yellow text-extra-small"></i>
+                                <i class="fas fa-star text-golden-yellow text-extra-small"></i>
+                            </div>
+                            <div class="text-extra-dark-gray text-medium alt-font font-weight-500 line-height-20px ">Notre-Dame de Paris</div>
+                            <span class="text-medium d-block margin-one-bottom">Victor Hugo</span>
+                        </div>
+                        <p class="margin-25px-top">Simply superb resort. Management and staff deserve special appreciation and thanks for hospitality.</p>
+                        <a href="{{ path('show_media')}}" class="btn btn-link-gradient btn-extra-large text-gradient-light-purple-light-orange d-table d-lg-inline-block lg-margin-15px-bottom md-margin-auto-lr mt-3">Voir plus<span class="bg-gradient-light-purple-light-orange"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
