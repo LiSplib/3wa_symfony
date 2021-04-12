@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=MediaRepository::class)
  * @ORM\Table(name="`media`")
- * @ORM\DiscriminatorMap({"media"="Media", "cd"="CD", "dvd"="DVD", "journal"="Journal", "book"="Book"})
+ * @ORM\DiscriminatorMap({"Media"="Media", "CD"="CD", "DVD"="DVD", "Journal"="Journal", "Book"="Book"})
  * @ORM\DiscriminatorColumn(name="mediaType", type="string")
  * @ORM\InheritanceType("JOINED")
  */
@@ -67,11 +67,6 @@ class Media
      * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="isAbout")
      */
     private $comments;
-
-    /**
-     * @ORM\OneToMany(targetEntity=MediaAdherent::class, mappedBy="hasForMedia")
-     */
-    private $mediaAdherents;
 
     /**
      * @ORM\ManyToMany(targetEntity=Adherent::class, inversedBy="media")
@@ -244,36 +239,6 @@ class Media
             // set the owning side to null (unless already changed)
             if ($comment->getIsAbout() === $this) {
                 $comment->setIsAbout(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|MediaAdherent[]
-     */
-    public function getMediaAdherents(): Collection
-    {
-        return $this->mediaAdherents;
-    }
-
-    public function addMediaAdherent(MediaAdherent $mediaAdherent): self
-    {
-        if (!$this->mediaAdherents->contains($mediaAdherent)) {
-            $this->mediaAdherents[] = $mediaAdherent;
-            $mediaAdherent->setHasForMedia($this);
-        }
-
-        return $this;
-    }
-
-    public function removeMediaAdherent(MediaAdherent $mediaAdherent): self
-    {
-        if ($this->mediaAdherents->removeElement($mediaAdherent)) {
-            // set the owning side to null (unless already changed)
-            if ($mediaAdherent->getHasForMedia() === $this) {
-                $mediaAdherent->setHasForMedia(null);
             }
         }
 

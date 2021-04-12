@@ -73,11 +73,6 @@ class Adherent extends User
     private $comments;
 
     /**
-     * @ORM\OneToMany(targetEntity=MediaAdherent::class, mappedBy="hasForAdherent")
-     */
-    private $mediaAdherents;
-
-    /**
      * @ORM\ManyToMany(targetEntity=Media::class, mappedBy="borrowed")
      */
     private $media;
@@ -290,36 +285,6 @@ class Adherent extends User
             // set the owning side to null (unless already changed)
             if ($comment->getWrittenBy() === $this) {
                 $comment->setWrittenBy(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|MediaAdherent[]
-     */
-    public function getMediaAdherents(): Collection
-    {
-        return $this->mediaAdherents;
-    }
-
-    public function addMediaAdherent(MediaAdherent $mediaAdherent): self
-    {
-        if (!$this->mediaAdherents->contains($mediaAdherent)) {
-            $this->mediaAdherents[] = $mediaAdherent;
-            $mediaAdherent->setHasForAdherent($this);
-        }
-
-        return $this;
-    }
-
-    public function removeMediaAdherent(MediaAdherent $mediaAdherent): self
-    {
-        if ($this->mediaAdherents->removeElement($mediaAdherent)) {
-            // set the owning side to null (unless already changed)
-            if ($mediaAdherent->getHasForAdherent() === $this) {
-                $mediaAdherent->setHasForAdherent(null);
             }
         }
 

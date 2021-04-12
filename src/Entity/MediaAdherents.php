@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\MediaAdherentRepository;
+use App\Repository\MediaAdherentsRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=MediaAdherentRepository::class)
  */
-class MediaAdherent
+class MediaAdherents
 {
     /**
      * @ORM\Id
