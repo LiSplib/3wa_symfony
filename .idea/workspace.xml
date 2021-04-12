@@ -20,13 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20c8557e-052b-4eb8-9437-51717be25374" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Adherent.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Adherent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Media.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Media.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/MediaAdherent.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/MediaAdherents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/MediaAdherentRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/MediaAdherentsRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,9 +204,9 @@
       <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state x="229" y="98" key="SettingsEditor/0.25.1440.875/62.-695.1280.695@0.25.1440.875" timestamp="1617802074437" />
-    <state x="421" y="188" width="597" height="548" key="find.popup" timestamp="1617799456077">
+    <state x="421" y="188" width="597" height="548" key="find.popup" timestamp="1618229069641">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state x="421" y="188" width="597" height="548" key="find.popup/0.25.1440.875/62.-695.1280.695@0.25.1440.875" timestamp="1617799456077" />
+    <state x="421" y="188" width="597" height="548" key="find.popup/0.25.1440.875/62.-695.1280.695@0.25.1440.875" timestamp="1618229069641" />
   </component>
 </project>

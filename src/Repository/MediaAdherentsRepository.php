@@ -2,11 +2,7 @@
 
 namespace App\Repository;
 
-<<<<<<< HEAD:src/Repository/MediaAdherentsRepository.php
 use App\Entity\MediaAdherents;
-=======
-use App\Entity\MediaAdherentss;
->>>>>>> 0c2a4d36e73bde1f265f56827b04f235c094ce3a:src/Repository/MediaAdherentsRepository.php
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

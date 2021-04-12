@@ -69,14 +69,11 @@ class Media
     private $comments;
 
     /**
-<<<<<<< HEAD
-=======
      * @ORM\OneToMany(targetEntity=MediaAdherents::class, mappedBy="hasForMedia")
      */
     private $mediaAdherents;
 
     /**
->>>>>>> 0c2a4d36e73bde1f265f56827b04f235c094ce3a
      * @ORM\ManyToMany(targetEntity=Adherent::class, inversedBy="media")
      */
     private $borrowed;
