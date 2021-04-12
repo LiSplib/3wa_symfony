@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=AdherentRepository::class)
  */
+
 class Adherent extends User
 {
     /**
@@ -299,7 +300,7 @@ class Adherent extends User
     /**
      * @return Collection|MediaAdherents[]
      */
-    public function getMediaAdherentss(): Collection
+    public function getMediaAdherents(): Collection
     {
         return $this->adherentsMedia;
     }
@@ -334,22 +335,21 @@ class Adherent extends User
         return $this->media;
     }
 
-    public function addMedium(Media $medium): self
+    public function addMedia(Media $media): self
     {
-        if (!$this->media->contains($medium)) {
-            $this->media[] = $medium;
-            $medium->addBorrowed($this);
+        if (!$this->media->contains($media)) {
+            $this->media[] = $media;
+            $media->addBorrowed($this);
         }
 
         return $this;
     }
 
-    public function removeMedium(Media $medium): self
+    public function removeMedia(Media $media): self
     {
-        if ($this->media->removeElement($medium)) {
-            $medium->removeBorrowed($this);
+        if ($this->media->removeElement($media)) {
+            $media->removeBorrowed($this);
         }
-
         return $this;
     }
 }
