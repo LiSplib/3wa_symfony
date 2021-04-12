@@ -2,7 +2,11 @@
 
 namespace App\Repository;
 
+<<<<<<< HEAD:src/Repository/MediaAdherentsRepository.php
 use App\Entity\MediaAdherents;
+=======
+use App\Entity\MediaAdherentss;
+>>>>>>> 0c2a4d36e73bde1f265f56827b04f235c094ce3a:src/Repository/MediaAdherentsRepository.php
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -20,7 +24,7 @@ class MediaAdherentsRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return MediaAdherent[] Returns an array of MediaAdherent objects
+    //  * @return MediaAdherents[] Returns an array of MediaAdherents objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +41,7 @@ class MediaAdherentsRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?MediaAdherent
+    public function findOneBySomeField($value): ?MediaAdherents
     {
         return $this->createQueryBuilder('m')
             ->andWhere('m.exampleField = :val')

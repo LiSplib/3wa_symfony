@@ -6,7 +6,7 @@ use App\Repository\MediaAdherentsRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=MediaAdherentRepository::class)
+ * @ORM\Entity(repositoryClass=MediaAdherentsRepository::class)
  */
 class MediaAdherents
 {

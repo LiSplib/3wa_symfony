@@ -69,6 +69,14 @@ class Media
     private $comments;
 
     /**
+<<<<<<< HEAD
+=======
+     * @ORM\OneToMany(targetEntity=MediaAdherents::class, mappedBy="hasForMedia")
+     */
+    private $mediaAdherents;
+
+    /**
+>>>>>>> 0c2a4d36e73bde1f265f56827b04f235c094ce3a
      * @ORM\ManyToMany(targetEntity=Adherent::class, inversedBy="media")
      */
     private $borrowed;
@@ -246,6 +254,39 @@ class Media
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * @return Collection|MediaAdherents[]
+     */
+    public function getMediaAdherentss(): Collection
+    {
+        return $this->mediaAdherents;
+    }
+
+    public function addMediaAdherents(MediaAdherents $mediaAdherent): self
+    {
+        if (!$this->mediaAdherents->contains($mediaAdherent)) {
+            $this->mediaAdherents[] = $mediaAdherent;
+            $mediaAdherent->setHasForMedia($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMediaAdherents(MediaAdherents $mediaAdherent): self
+    {
+        if ($this->mediaAdherents->removeElement($mediaAdherent)) {
+            // set the owning side to null (unless already changed)
+            if ($mediaAdherent->getHasForMedia() === $this) {
+                $mediaAdherent->setHasForMedia(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+>>>>>>> 0c2a4d36e73bde1f265f56827b04f235c094ce3a
      * @return Collection|Adherent[]
      */
     public function getBorrowed(): Collection

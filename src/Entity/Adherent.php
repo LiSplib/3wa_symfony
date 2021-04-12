@@ -73,6 +73,14 @@ class Adherent extends User
     private $comments;
 
     /**
+<<<<<<< HEAD
+=======
+     * @ORM\OneToMany(targetEntity=MediaAdherents::class, mappedBy="hasForAdherent")
+     */
+    private $adherentsMedia;
+
+    /**
+>>>>>>> 0c2a4d36e73bde1f265f56827b04f235c094ce3a
      * @ORM\ManyToMany(targetEntity=Media::class, mappedBy="borrowed")
      */
     private $media;
@@ -83,7 +91,7 @@ class Adherent extends User
         $this->likes = new ArrayCollection();
         $this->suggestions = new ArrayCollection();
         $this->comments = new ArrayCollection();
-        $this->mediaAdherents = new ArrayCollection();
+        $this->adherentsMedia = new ArrayCollection();
         $this->media = new ArrayCollection();
     }
 
@@ -292,6 +300,39 @@ class Adherent extends User
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * @return Collection|MediaAdherents[]
+     */
+    public function getMediaAdherentss(): Collection
+    {
+        return $this->adherentsMedia;
+    }
+
+    public function addMediaAdherents(MediaAdherents $adherentMedia): self
+    {
+        if (!$this->adherentsMedia->contains($adherentMedia)) {
+            $this->adherentsMedia[] = $adherentMedia;
+            $adherentMedia->setHasForAdherent($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMediaAdherents(MediaAdherents $adherentMedia): self
+    {
+        if ($this->adherentsMedia->removeElement($adherentMedia)) {
+            // set the owning side to null (unless already changed)
+            if ($adherentMedia->getHasForAdherent() === $this) {
+                $adherentMedia->setHasForAdherent(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+>>>>>>> 0c2a4d36e73bde1f265f56827b04f235c094ce3a
      * @return Collection|Media[]
      */
     public function getMedia(): Collection
