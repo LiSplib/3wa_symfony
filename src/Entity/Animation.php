@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\AnimationRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -46,6 +48,22 @@ class Animation
      * @ORM\ManyToOne(targetEntity=Employee::class, inversedBy="animations")
      */
     private $organizedBy;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Adherent::class, mappedBy="participates")
+     */
+    private $adherents;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Contributor::class, mappedBy="invited")
+     */
+    private $contributors;
+
+    public function __construct()
+    {
+        $this->adherents = new ArrayCollection();
+        $this->contributors = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -120,6 +138,60 @@ class Animation
     public function setOrganizedBy(?Employee $organizedBy): self
     {
         $this->organizedBy = $organizedBy;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Adherent[]
+     */
+    public function getAdherents(): Collection
+    {
+        return $this->adherents;
+    }
+
+    public function addAdherent(Adherent $adherent): self
+    {
+        if (!$this->adherents->contains($adherent)) {
+            $this->adherents[] = $adherent;
+            $adherent->addParticipate($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAdherent(Adherent $adherent): self
+    {
+        if ($this->adherents->removeElement($adherent)) {
+            $adherent->removeParticipate($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Contributor[]
+     */
+    public function getContributors(): Collection
+    {
+        return $this->contributors;
+    }
+
+    public function addContributor(Contributor $contributor): self
+    {
+        if (!$this->contributors->contains($contributor)) {
+            $this->contributors[] = $contributor;
+            $contributor->addInvited($this);
+        }
+
+        return $this;
+    }
+
+    public function removeContributor(Contributor $contributor): self
+    {
+        if ($this->contributors->removeElement($contributor)) {
+            $contributor->removeInvited($this);
+        }
 
         return $this;
     }

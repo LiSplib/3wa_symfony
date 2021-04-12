@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\MediaRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -51,6 +53,52 @@ class Media
      * @ORM\Column(type="text")
      */
     private $presentation;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Adherent::class, mappedBy="likes")
+     */
+    private $adherents;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="isAbout")
+     */
+    private $comments;
+
+    /**
+     * @ORM\OneToMany(targetEntity=MediaAdherent::class, mappedBy="hasForMedia")
+     */
+    private $mediaAdherents;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Adherent::class, inversedBy="media")
+     */
+    private $borrowed;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, inversedBy="media")
+     */
+    private $likes;
+
+    /**
+     * @ORM\OneToMany(targetEntity=MediaContributor::class, mappedBy="hasForMedia")
+     */
+    private $mediaContributors;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Resource::class, mappedBy="relatedTo")
+     */
+    private $resources;
+
+    public function __construct()
+    {
+        $this->adherents = new ArrayCollection();
+        $this->comments = new ArrayCollection();
+        $this->mediaAdherents = new ArrayCollection();
+        $this->borrowed = new ArrayCollection();
+        $this->likes = new ArrayCollection();
+        $this->mediaContributors = new ArrayCollection();
+        $this->resources = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -137,6 +185,201 @@ class Media
     public function setPresentation(string $presentation): self
     {
         $this->presentation = $presentation;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Adherent[]
+     */
+    public function getAdherents(): Collection
+    {
+        return $this->adherents;
+    }
+
+    public function addAdherent(Adherent $adherent): self
+    {
+        if (!$this->adherents->contains($adherent)) {
+            $this->adherents[] = $adherent;
+            $adherent->addLike($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAdherent(Adherent $adherent): self
+    {
+        if ($this->adherents->removeElement($adherent)) {
+            $adherent->removeLike($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Comment[]
+     */
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(Comment $comment): self
+    {
+        if (!$this->comments->contains($comment)) {
+            $this->comments[] = $comment;
+            $comment->setIsAbout($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(Comment $comment): self
+    {
+        if ($this->comments->removeElement($comment)) {
+            // set the owning side to null (unless already changed)
+            if ($comment->getIsAbout() === $this) {
+                $comment->setIsAbout(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|MediaAdherent[]
+     */
+    public function getMediaAdherents(): Collection
+    {
+        return $this->mediaAdherents;
+    }
+
+    public function addMediaAdherent(MediaAdherent $mediaAdherent): self
+    {
+        if (!$this->mediaAdherents->contains($mediaAdherent)) {
+            $this->mediaAdherents[] = $mediaAdherent;
+            $mediaAdherent->setHasForMedia($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMediaAdherent(MediaAdherent $mediaAdherent): self
+    {
+        if ($this->mediaAdherents->removeElement($mediaAdherent)) {
+            // set the owning side to null (unless already changed)
+            if ($mediaAdherent->getHasForMedia() === $this) {
+                $mediaAdherent->setHasForMedia(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Adherent[]
+     */
+    public function getBorrowed(): Collection
+    {
+        return $this->borrowed;
+    }
+
+    public function addBorrowed(Adherent $borrowed): self
+    {
+        if (!$this->borrowed->contains($borrowed)) {
+            $this->borrowed[] = $borrowed;
+        }
+
+        return $this;
+    }
+
+    public function removeBorrowed(Adherent $borrowed): self
+    {
+        $this->borrowed->removeElement($borrowed);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getLikes(): Collection
+    {
+        return $this->likes;
+    }
+
+    public function addLike(User $like): self
+    {
+        if (!$this->likes->contains($like)) {
+            $this->likes[] = $like;
+        }
+
+        return $this;
+    }
+
+    public function removeLike(User $like): self
+    {
+        $this->likes->removeElement($like);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|MediaContributor[]
+     */
+    public function getMediaContributors(): Collection
+    {
+        return $this->mediaContributors;
+    }
+
+    public function addMediaContributor(MediaContributor $mediaContributor): self
+    {
+        if (!$this->mediaContributors->contains($mediaContributor)) {
+            $this->mediaContributors[] = $mediaContributor;
+            $mediaContributor->setHasForMedia($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMediaContributor(MediaContributor $mediaContributor): self
+    {
+        if ($this->mediaContributors->removeElement($mediaContributor)) {
+            // set the owning side to null (unless already changed)
+            if ($mediaContributor->getHasForMedia() === $this) {
+                $mediaContributor->setHasForMedia(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Resource[]
+     */
+    public function getResources(): Collection
+    {
+        return $this->resources;
+    }
+
+    public function addResource(Resource $resource): self
+    {
+        if (!$this->resources->contains($resource)) {
+            $this->resources[] = $resource;
+            $resource->setRelatedTo($this);
+        }
+
+        return $this;
+    }
+
+    public function removeResource(Resource $resource): self
+    {
+        if ($this->resources->removeElement($resource)) {
+            // set the owning side to null (unless already changed)
+            if ($resource->getRelatedTo() === $this) {
+                $resource->setRelatedTo(null);
+            }
+        }
 
         return $this;
     }

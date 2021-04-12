@@ -27,6 +27,11 @@ class Resource
      */
     private $note;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Media::class, inversedBy="resources")
+     */
+    private $relatedTo;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +57,18 @@ class Resource
     public function setNote(?string $note): self
     {
         $this->note = $note;
+
+        return $this;
+    }
+
+    public function getRelatedTo(): ?Media
+    {
+        return $this->relatedTo;
+    }
+
+    public function setRelatedTo(?Media $relatedTo): self
+    {
+        $this->relatedTo = $relatedTo;
 
         return $this;
     }

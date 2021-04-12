@@ -37,6 +37,16 @@ class Comment
      */
     private $likes;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Adherent::class, inversedBy="comments")
+     */
+    private $writtenBy;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Media::class, inversedBy="comments")
+     */
+    private $isAbout;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +96,30 @@ class Comment
     public function setLikes(int $likes): self
     {
         $this->likes = $likes;
+
+        return $this;
+    }
+
+    public function getWrittenBy(): ?Adherent
+    {
+        return $this->writtenBy;
+    }
+
+    public function setWrittenBy(?Adherent $writtenBy): self
+    {
+        $this->writtenBy = $writtenBy;
+
+        return $this;
+    }
+
+    public function getIsAbout(): ?Media
+    {
+        return $this->isAbout;
+    }
+
+    public function setIsAbout(?Media $isAbout): self
+    {
+        $this->isAbout = $isAbout;
 
         return $this;
     }

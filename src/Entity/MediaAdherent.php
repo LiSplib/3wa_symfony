@@ -37,6 +37,16 @@ class MediaAdherent
      */
     private $reservation;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Adherent::class, inversedBy="mediaAdherents")
+     */
+    private $hasForAdherent;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Media::class, inversedBy="mediaAdherents")
+     */
+    private $hasForMedia;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +96,30 @@ class MediaAdherent
     public function setReservation(bool $reservation): self
     {
         $this->reservation = $reservation;
+
+        return $this;
+    }
+
+    public function getHasForAdherent(): ?Adherent
+    {
+        return $this->hasForAdherent;
+    }
+
+    public function setHasForAdherent(?Adherent $hasForAdherent): self
+    {
+        $this->hasForAdherent = $hasForAdherent;
+
+        return $this;
+    }
+
+    public function getHasForMedia(): ?Media
+    {
+        return $this->hasForMedia;
+    }
+
+    public function setHasForMedia(?Media $hasForMedia): self
+    {
+        $this->hasForMedia = $hasForMedia;
 
         return $this;
     }

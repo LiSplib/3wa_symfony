@@ -37,6 +37,11 @@ class Suggestion
      */
     private $category;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Adherent::class, inversedBy="suggestions")
+     */
+    private $suggests;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class Suggestion
     public function setCategory(string $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getSuggests(): ?Adherent
+    {
+        return $this->suggests;
+    }
+
+    public function setSuggests(?Adherent $suggests): self
+    {
+        $this->suggests = $suggests;
 
         return $this;
     }

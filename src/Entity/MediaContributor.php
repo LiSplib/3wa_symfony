@@ -22,6 +22,16 @@ class MediaContributor
      */
     private $role;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Contributor::class, inversedBy="mediaContributors")
+     */
+    private $hasForContributor;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Media::class, inversedBy="mediaContributors")
+     */
+    private $hasForMedia;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +45,30 @@ class MediaContributor
     public function setRole(string $role): self
     {
         $this->role = $role;
+
+        return $this;
+    }
+
+    public function getHasForContributor(): ?Contributor
+    {
+        return $this->hasForContributor;
+    }
+
+    public function setHasForContributor(?Contributor $hasForContributor): self
+    {
+        $this->hasForContributor = $hasForContributor;
+
+        return $this;
+    }
+
+    public function getHasForMedia(): ?Media
+    {
+        return $this->hasForMedia;
+    }
+
+    public function setHasForMedia(?Media $hasForMedia): self
+    {
+        $this->hasForMedia = $hasForMedia;
 
         return $this;
     }
