@@ -11,7 +11,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\Table(name="`user`")
- * @ORM\DiscriminatorMap({"u"="User", "e"="Employee", "a"="Adherent"})
+ * @ORM\DiscriminatorMap({"user"="User", "employee"="Employee", "adherent"="Adherent"})
  * @ORM\DiscriminatorColumn(name="userType", type="string")
  * @ORM\InheritanceType("JOINED")
  */
