@@ -69,7 +69,7 @@ class Media
     private $comments;
 
     /**
-     * @ORM\OneToMany(targetEntity=MediaAdherent::class, mappedBy="hasForMedia")
+     * @ORM\OneToMany(targetEntity=MediaAdherents::class, mappedBy="hasForMedia")
      */
     private $mediaAdherents;
 
@@ -251,14 +251,14 @@ class Media
     }
 
     /**
-     * @return Collection|MediaAdherent[]
+     * @return Collection|MediaAdherents[]
      */
-    public function getMediaAdherents(): Collection
+    public function getMediaAdherentss(): Collection
     {
         return $this->mediaAdherents;
     }
 
-    public function addMediaAdherent(MediaAdherent $mediaAdherent): self
+    public function addMediaAdherents(MediaAdherents $mediaAdherent): self
     {
         if (!$this->mediaAdherents->contains($mediaAdherent)) {
             $this->mediaAdherents[] = $mediaAdherent;
@@ -268,7 +268,7 @@ class Media
         return $this;
     }
 
-    public function removeMediaAdherent(MediaAdherent $mediaAdherent): self
+    public function removeMediaAdherents(MediaAdherents $mediaAdherent): self
     {
         if ($this->mediaAdherents->removeElement($mediaAdherent)) {
             // set the owning side to null (unless already changed)

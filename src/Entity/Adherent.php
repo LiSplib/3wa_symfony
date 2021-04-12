@@ -73,9 +73,9 @@ class Adherent extends User
     private $comments;
 
     /**
-     * @ORM\OneToMany(targetEntity=MediaAdherent::class, mappedBy="hasForAdherent")
+     * @ORM\OneToMany(targetEntity=MediaAdherents::class, mappedBy="hasForAdherent")
      */
-    private $mediaAdherents;
+    private $adherentsMedia;
 
     /**
      * @ORM\ManyToMany(targetEntity=Media::class, mappedBy="borrowed")
@@ -88,7 +88,7 @@ class Adherent extends User
         $this->likes = new ArrayCollection();
         $this->suggestions = new ArrayCollection();
         $this->comments = new ArrayCollection();
-        $this->mediaAdherents = new ArrayCollection();
+        $this->adherentsMedia = new ArrayCollection();
         $this->media = new ArrayCollection();
     }
 
@@ -297,29 +297,29 @@ class Adherent extends User
     }
 
     /**
-     * @return Collection|MediaAdherent[]
+     * @return Collection|MediaAdherents[]
      */
-    public function getMediaAdherents(): Collection
+    public function getMediaAdherentss(): Collection
     {
-        return $this->mediaAdherents;
+        return $this->adherentsMedia;
     }
 
-    public function addMediaAdherent(MediaAdherent $mediaAdherent): self
+    public function addMediaAdherents(MediaAdherents $adherentMedia): self
     {
-        if (!$this->mediaAdherents->contains($mediaAdherent)) {
-            $this->mediaAdherents[] = $mediaAdherent;
-            $mediaAdherent->setHasForAdherent($this);
+        if (!$this->adherentsMedia->contains($adherentMedia)) {
+            $this->adherentsMedia[] = $adherentMedia;
+            $adherentMedia->setHasForAdherent($this);
         }
 
         return $this;
     }
 
-    public function removeMediaAdherent(MediaAdherent $mediaAdherent): self
+    public function removeMediaAdherents(MediaAdherents $adherentMedia): self
     {
-        if ($this->mediaAdherents->removeElement($mediaAdherent)) {
+        if ($this->adherentsMedia->removeElement($adherentMedia)) {
             // set the owning side to null (unless already changed)
-            if ($mediaAdherent->getHasForAdherent() === $this) {
-                $mediaAdherent->setHasForAdherent(null);
+            if ($adherentMedia->getHasForAdherent() === $this) {
+                $adherentMedia->setHasForAdherent(null);
             }
         }
 

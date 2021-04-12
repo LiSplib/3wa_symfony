@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\MediaAdherent;
+use App\Entity\MediaAdherentss;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method MediaAdherent|null find($id, $lockMode = null, $lockVersion = null)
- * @method MediaAdherent|null findOneBy(array $criteria, array $orderBy = null)
- * @method MediaAdherent[]    findAll()
- * @method MediaAdherent[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method MediaAdherents|null find($id, $lockMode = null, $lockVersion = null)
+ * @method MediaAdherents|null findOneBy(array $criteria, array $orderBy = null)
+ * @method MediaAdherents[]    findAll()
+ * @method MediaAdherents[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class MediaAdherentRepository extends ServiceEntityRepository
+class MediaAdherentsRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, MediaAdherent::class);
+        parent::__construct($registry, MediaAdherents::class);
     }
 
     // /**
-    //  * @return MediaAdherent[] Returns an array of MediaAdherent objects
+    //  * @return MediaAdherents[] Returns an array of MediaAdherents objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class MediaAdherentRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?MediaAdherent
+    public function findOneBySomeField($value): ?MediaAdherents
     {
         return $this->createQueryBuilder('m')
             ->andWhere('m.exampleField = :val')
