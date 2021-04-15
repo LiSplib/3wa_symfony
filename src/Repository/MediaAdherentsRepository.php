@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\MediaAdherentss;
+use App\Entity\MediaAdherents;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

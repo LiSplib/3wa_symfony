@@ -4,12 +4,11 @@ namespace App\DataFixtures;
 
 use App\Entity\Adherent;
 use App\Entity\Employee;
-use Faker\Factory as Faker;
-use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Common\DataFixtures\DependentFixtureInterface;
+use Doctrine\Persistence\ObjectManager;
+use Faker\Factory as Faker;
 
-class AppFixtures extends Fixture implements DependentFixtureInterface
+class AppFixtures extends Fixture 
 {
     public function load(ObjectManager $manager)
     {

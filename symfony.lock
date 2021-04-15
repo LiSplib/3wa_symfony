@@ -57,7 +57,11 @@
             "ref": "e5b542d4ef47d8a003c91beb35650c76907f7e53"
         },
         "files": [
+<<<<<<< HEAD
             "./src/DataFixtures/AppFixtures.php"
+=======
+            "src/DataFixtures/AppFixtures.php"
+>>>>>>> 381d9d9823f2a70efe4c87e966fef72bfb946243
         ]
     },
     "doctrine/doctrine-migrations-bundle": {
@@ -102,6 +106,9 @@
     },
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.3"
+    },
+    "fzaninotto/faker": {
+        "version": "v1.9.2"
     },
     "laminas/laminas-code": {
         "version": "3.4.1"

@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=MediaRepository::class)
  * @ORM\Table(name="`media`")
- * @ORM\DiscriminatorMap({"media"="Media", "cd"="CD", "dvd"="DVD", "journal"="Journal", "book"="Book"})
+ * @ORM\DiscriminatorMap({"Media"="Media", "CD"="CD", "DVD"="DVD", "Journal"="Journal", "Book"="Book"})
  * @ORM\DiscriminatorColumn(name="mediaType", type="string")
  * @ORM\InheritanceType("JOINED")
  */
@@ -251,6 +251,8 @@ class Media
     }
 
     /**
+<<<<<<< HEAD
+=======
      * @return Collection|MediaAdherents[]
      */
     public function getMediaAdherentss(): Collection
@@ -281,6 +283,7 @@ class Media
     }
 
     /**
+>>>>>>> 0c2a4d36e73bde1f265f56827b04f235c094ce3a
      * @return Collection|Adherent[]
      */
     public function getBorrowed(): Collection

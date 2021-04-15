@@ -21,11 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="20c8557e-052b-4eb8-9437-51717be25374" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AppController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AppController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MediaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MediaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout/_navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout/_navbar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/media/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/media/book_list.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/media/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/media/book_show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,18 +149,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/media" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/templates/media" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/layout" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/media" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -196,10 +192,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="429" y="127" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1617799703417">
+    <state x="429" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1618224609894">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state x="429" y="127" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.25.1440.875/62.-695.1280.695@0.25.1440.875" timestamp="1617799703417" />
+    <state x="429" y="25" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.25.1440.875/62.-695.1280.695@0.25.1440.875" timestamp="1618224609894" />
     <state x="458" y="213" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1617801470767">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
@@ -208,9 +204,9 @@
       <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state x="229" y="98" key="SettingsEditor/0.25.1440.875/62.-695.1280.695@0.25.1440.875" timestamp="1617802074437" />
-    <state x="421" y="188" width="597" height="548" key="find.popup" timestamp="1617799456077">
+    <state x="421" y="188" width="597" height="548" key="find.popup" timestamp="1618229069641">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
-    <state x="421" y="188" width="597" height="548" key="find.popup/0.25.1440.875/62.-695.1280.695@0.25.1440.875" timestamp="1617799456077" />
+    <state x="421" y="188" width="597" height="548" key="find.popup/0.25.1440.875/62.-695.1280.695@0.25.1440.875" timestamp="1618229069641" />
   </component>
 </project>
